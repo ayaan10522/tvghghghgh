@@ -1,0 +1,1826 @@
+<html class="hydrated"><head>
+  <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	   <title>Live-tv </title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+<link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"><link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amita">
+<link rel="shortcut icon" type="image/x-icon" href="https://th.bing.com/th/id/OIP.U90mApYyHLls2nFFW0Sz8gHaHa?pid=ImgDet&amp;rs=1">
+<link rel="stylesheet" href="style7.css">
+
+<style>
+	#typing-text {
+	width: 100%;
+	height: 40px;
+	font-size: 15px;
+	border: solid 1px #ffffff;
+	color: #000000;
+	background-color: #ffffff;
+	text-align: center;
+	font-family: Amita, cursive;
+	font-weight: bold;
+	padding: 5px;
+	resize: none;
+	outline: none;
+	box-sizing: border-box;
+}
+  	#livebbtvTable {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(110px, 0fr));
+        grid-gap: 15px;
+        grid-right: 10px;
+        grid-left: 10px;
+        justify-content: center; 
+      }
+      #livebbtvTable > div {
+        font-size: 12px;
+        color: Black;
+        text-align: center;
+      }
+       .livebbtv-item { 
+   border: 1.5px solid #490a3d; 
+  width: 110px; 
+  height: 145px; 
+  overflow: hidden; 
+  border-radius: 5px; 
+  box-shadow: 2px 2px 5px rgba(0,0,0, .3); 
+  
+} 
+       .livebbtv-thumb:hover { 
+filter: blur(3px);
+  transform: scale(0.97);
+  }
+.livebbtv-thumb img { 
+    width: 100%; 
+    height: 105px;     
+}
+.livebbtv-name{
+  color: #000000;
+  border-radius: 5px;
+  margin-top: -5px; 
+  padding: 3px; 
+  border-top: 1.5px solid #490a3d; 
+}
+  a{
+  	text-decoration: none;
+  	}
+  .ddlFilterTableRow{
+  	font-family: Amita, cursive;
+  	width:200px;
+      font-size:16px;
+      padding:5px;
+      text-decoration: none;
+      background-color:#FFFFFF;
+       border: solid 2px #007bff;
+       border-radius: 5px; 
+      color:#007bff;"
+  }
+  
+    .up {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    font-size: 15px;
+    background-color: #007bff;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+  }
+  
+  
+  :root {
+    --body-color: #ffffff;
+    --nav-color: #ff0015;
+    --side-nav: #010718;
+    --text-color: #FFF;
+    --search-bar: #F2F2F2;
+    --search-text: #010718;
+    --font-color: #000000;
+    --more-color: #EBFF0049;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  body {
+    height: 100vh;
+    background-color: var(--body-color);
+    font-family: Copperplate Papyrus, Fantasy;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+  }
+  
+  body.dark {
+    --body-color: #18191A;
+    --nav-color: #242526;
+    --side-nav: #242526;
+    --text-color: #CCC;
+    --search-bar: #242526;
+    --font-color: #ffffff;
+  }
+  body.dark nav {
+    border: 1px solid #393838;
+  }
+  body.dark .search-field input {
+    color: var(--text-color);
+  }
+  body.dark .search-field i {
+    color: var(--text-color);
+  }
+  
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 55px;
+    width: 100%;
+    background-color: var(--nav-color);
+    z-index: 100;
+    box-shadow: 0 6px 6px 0 rgb(0,0,0,.4);
+  }
+  nav .nav-bar {
+    position: relative;
+    height: 100%;
+    max-width: 1000px;
+    width: 100%;
+    background-color: var(--nav-color);
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  nav .nav-bar .sidebarOpen {
+    color: var(--text-color);
+    font-size: 25px;
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+  }
+  nav .nav-bar .logo a {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text-color);
+    text-decoration: none;
+  }
+  
+  .menu .logo-toggle {
+    display: none;
+  }
+  
+  .nav-bar .nav-links {
+    display: flex;
+    align-items: center;
+  }
+  .nav-bar .nav-links li {
+    margin: 0 5px;
+    list-style: none;
+  }
+  .nav-bar .darkLight-searchBox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-links li a {
+    position: relative;
+    font-size: 17px;
+    font-color: #000000;
+    font-weight: 400;
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: Copperplate Papyrus, Fantasy;
+    padding: 10px;
+  }
+  .nav-links li a::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+  .nav-links li:hover a::before {
+    opacity: 1;
+  }
+  
+  .darkLight-searchBox .dark-light {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+  }
+  .darkLight-searchBox .searchToggle {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
+  }
+  
+  .dark-light i {
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .dark-light i.sun {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .searchToggle i {
+    position: absolute;
+    color: var(--text-color);
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .searchToggle i.cancel {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .dark-light.active i.sun {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .dark-light.active i.moon {
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  .searchToggle.active i.cancel {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .searchToggle.active i.search {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .searchToggle.active ~ .search-field {
+    bottom: -74px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .searchBox {
+    position: relative;
+  }
+  .searchBox .search-field {
+    position: absolute;
+    bottom: -60px;
+    right: 5px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    background-color: var(--nav-color);
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  .search-field::before {
+    content: "";
+    position: absolute;
+    right: 14px;
+    top: -4px;
+    height: 12px;
+    width: 12px;
+    background-color: var(--nav-color);
+    transform: rotate(-45deg);
+    z-index: -1;
+  }
+  .search-field input {
+    height: 100%;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: Copperplate Papyrus, Fantasy;
+    font-weight: 400;
+    color: var(--search-text);
+    background-color: var(--search-bar);
+  }
+  .search-field i {
+    position: absolute;
+    color: var(--nav-color);
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 790px) {
+    nav .nav-bar .sidebarOpen {
+      display: block;
+    }
+  
+    .menu {
+      position: fixed;
+      font-family: Copperplate Papyrus, Fantasy;
+      height: 100%;
+      width: 320px;
+      left: -100%;
+      top: 0;
+      padding: 20px;
+      background-color: var(--nav-color);
+      z-index: 100;
+      transition: all 0.4s ease;
+      box-shadow: 12px 0 12px -6px rgba(0, 0, 0, 0.2);
+    }
+    .menu .logo-toggle {
+      display: block;
+      width: 100%;
+      font-family: Copperplate Papyrus, Fantasy;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    nav.active .menu {
+      left: 0%;
+    }
+    nav.active .nav-bar .navLogo a {
+      opacity: 0;
+      font-family: Copperplate Papyrus, Fantasy;
+      transition: all 0.3s ease;
+    }
+  
+    .logo-toggle .siderbarClose {
+        font-family: Copperplate Papyrus, Fantasy;
+      color: var(--text-color);
+      font-size: 24px;
+      cursor: pointer;
+    }
+  
+    .nav-bar .nav-links {
+      flex-direction: column;
+      padding-top: 30px;
+    }
+  
+    .nav-links li a {
+      display: block;
+      font-family: Copperplate Papyrus, Fantasy;
+      margin-top: 20px;
+    }
+  }
+  
+      .alignleft {
+    float: left;
+    margin-left: 5px;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    font-family: Copperplate Papyrus, Fantasy;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .alignright {
+    float: right;
+    margin-right: 10px;
+    background-color: var(--bg-color);
+    color: #0099cc;
+    font-size: 15px;
+    font-family: Copperplate Papyrus, Fantasy;
+    font-weight: normal;
+  }
+  h4 {
+    margin-left: 5px;
+    color: #0099cc;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .nta {
+    overflow: hidden;
+    background-color: var(--bg-color);
+  }
+  .cent {
+    font-size: auto;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  div.scrollmenu::-webkit-scrollbar {
+    display: none;
+  }
+  div.scrollmenu {
+    background-color: var(--bg-color);
+    overflow: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+  }
+  
+  div.scrollmenu a {
+      display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    height: 130px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);"
+  }
+  
+  div.scrollmenu a:hover {
+      filter: blur(3px);
+    transform: scale(0.97);
+    background-color: var(--bg-color);
+  }
+  div.scrollvoot::-webkit-scrollbar {
+    display: none;
+  }
+  div.scrollvoot {
+    background-color: var(--bg-color);
+    overflow: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+  }
+  div.scrollvoot a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    height: 130px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  div.scrollvoot a:hover {
+    background-color: var(--bg-color);
+    filter: blur(3px);
+    transform: scale(0.97);
+  }
+  .cen {
+    text-align: center;
+    width: 205px;
+  }
+  
+  .nt {
+    width: 205px; 
+     border-radius: 15px; 
+     height: 123px ; 
+  }
+  div.scrollme::-webkit-scrollbar {
+    display: none;
+  }
+  div.scrollme {
+    background-color: var(--bg-color);
+    overflow: auto;
+  
+    white-space: nowrap;
+    overflow-y: hidden;
+  }
+  div.scrollme a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    height: 255px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  div.scrollme a:hover {
+    background-color: var(--bg-color);
+    filter: blur(3px);
+    transform: scale(0.97);
+  }
+  .cean {
+    text-align: center;
+    width: 160px;
+  }
+  .net {
+    width: 160px;
+    border-radius: 15px;
+    height: 255px;
+  }
+  .in{ 
+     width: 205px; 
+     border-radius: 5px; 
+     height: 110px ; 
+  } 
+  div.ott::-webkit-scrollbar {
+    display: none;
+  }
+  div.ott {
+    background-color: var(--bg-color);
+    overflow: auto;
+    white-space: nowrap;
+    overflow-y: hidden;
+  }
+  div.ott a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    height: 110px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  div.ott a:hover {
+    background-color: var(--bg-color);
+    filter: blur(3px);
+    transform: scale(0.97);
+  }
+  .cn {
+    text-align: center;
+    width: 205px;
+  }
+  .nit {
+    width: 205px; 
+     border-radius: 15px; 
+     height: 110px ; 
+  }
+  
+         .nature:hover { 
+  filter: blur(3px);
+    transform: scale(0.97);
+    }
+  .nature{
+      margin-top: 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0, .3); 
+      }
+      
+      .up {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 15px;
+    background-color: #2770ff;
+    border: 2px solid #490a3d; 
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    z-index: 999999;
+  }
+  
+  
+  
+  footer {
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      background: var(--nav-color);
+      color: var(--font-color);
+  }
+  
+  footer p {
+      padding: 25px 20px;
+      text-align: center;
+  }
+  
+  footer img {
+      width: 45px;
+      margin-bottom: -10px;
+  }
+  	</style>
+  
+<style data-cursor="cursor"></style><script src="chrome-extension://njgehaondchbmjmajphnhlojfnbfokng/js/contentScripts/dom.js"></script></head>
+<body>
+	<i class="uil uil-angle-up up" style="display: none;"></i>
+<nav>
+        <div class="nav-bar">
+            <span class="logo navLogo"><a href="#">Ayaan-g-live-tv-g</a></span>
+            
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class="bx bx-x cancel"></i>
+                    <i class="bx bx-search search"></i>
+                   </div>
+                    <div class="search-field">
+                        <input type="text" placeholder="Search..." id="look_tv_here">
+                        <i class="bx bx-search"></i>
+                    </div>
+                </div>
+            </div>
+        
+    </nav>
+    
+    <br><br><br>
+    	
+    	<div>
+        <div id="livebbtvTable">
+          
+               
+           <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="set.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/videoasset_images/sethd_23oct_portrait_thumb_rev.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px">
+       <div class="livebbtv-name">SONY SET HD</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="sab.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/videoasset_images/sony_sabhd_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px">
+       <div class="livebbtv-name">SONY SAB HD</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="marathi.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/videoasset_images/sony_marathi_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px">
+       <div class="livebbtv-name">Sony Marathi</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="bbc.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/videoasset_images/sony_bbchd_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px" cursorshover="true">
+       <div class="livebbtv-name">Sony BBC Earth HD</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="pal.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pal.png" width="110px" height="100px" cursorshover="true">
+       <div class="livebbtv-name" cursorshover="true">Sony PAL</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="aath.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/videoasset_images/sony_aath_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px" cursorshover="true">
+       <div class="livebbtv-name">Sony Aath</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="maxhd.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/videoasset_images/sony_maxhd_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px">
+       <div class="livebbtv-name">Sony MAX HD</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="wah.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/videoasset_images/sony_wah_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px">
+       <div class="livebbtv-name">Sony WAH</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="max2.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/videoasset_images/sony_max2_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px" cursorshover="true">
+       <div class="livebbtv-name" cursorshover="true">Sony MAX2</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="pix.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/videoasset_images/sony_pixhd_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px">
+       <div class="livebbtv-name">Sony PIX HD</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="max.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/SET_MAX.png" width="110px" height="100px">
+       <div class="livebbtv-name">Sony MAX</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="ten1hd.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/portrait_thumb/Sony_TEN1HD_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px">
+       <div class="livebbtv-name">Sony Ten 1 HD</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="ten2hd.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://origin-staticv2.sonyliv.com/circular_image/Sony_TEN2HD_23oct_circular_thumb.jpg" width="110px" height="100px">
+       <div class="livebbtv-name">Sony Ten 2 HD</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="ten3hd.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://origin-staticv2.sonyliv.com/circular_image/Sony_TEN3HD_23oct_circular_thumb.jpg" width="110px" height="100px">
+       <div class="livebbtv-name">Sony Ten 3 HD</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="ten4hd.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/portrait_thumb/Sony_TEN4HD_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px" cursorshover="true">
+       <div class="livebbtv-name">Sony Ten 4 HD</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="ten5hd.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; " cursorshover="true"><img class="loading" src="https://origin-staticv2.sonyliv.com/circular_image/Sony_TEN5HD_23oct_circular_thumb.jpg" width="110px" height="100px" cursorshover="true">
+       <div class="livebbtv-name" cursorshover="true">Sony Ten 5 HD</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="ten1.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://origin-staticv2.sonyliv.com/circular_image/Sony_TEN1_23oct_circular_thumb.jpg" width="110px" height="100px">
+       <div class="livebbtv-name">Sony Ten 1</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="ten2.html" cursorshover="true">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://origin-staticv2.sonyliv.com/circular_image/Sony_TEN2_23oct_circular_thumb.jpg" width="110px" height="100px" cursorshover="true">
+       <div class="livebbtv-name" cursorshover="true">Sony Ten 2</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="ten3.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://origin-staticv2.sonyliv.com/circular_image/Sony_TEN3_23oct_circular_thumb.jpg" width="110px" height="100px">
+       <div class="livebbtv-name">Sony Ten 3</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="ten4.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://origin-staticv2.sonyliv.com/circular_image/Sony_TEN4_23oct_circular_thumb.jpg" width="110px" height="100px">
+       <div class="livebbtv-name">Sony Ten 4</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="ten5.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://origin-staticv2.sonyliv.com/circular_image/Sony_TEN5_23oct_circular_thumb.jpg" width="110px" height="100px">
+       <div class="livebbtv-name">Sony Ten 5</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="yay.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://images.slivcdn.com/videoasset_images/sony_yay_23oct_portrait_thumb.jpg?h=494&amp;w=344&amp;t=c_fill&amp;q=low&amp;fr=webp" width="110px" height="100px">
+       <div class="livebbtv-name">Sony Yay</div></div> </a> </div>
+       
+       <div class="livebbtv-item" data-genre="sony" style="">
+       <a href="kal.html">
+       <div class="livebbtv-thumb" style=" bottom: 0px; "><img class="loading" src="https://upload.wikimedia.org/wikipedia/en/6/6e/Sony_Kal_Logo.jpeg" width="110px" height="100px">
+       <div class="livebbtv-name">Sony Kal</div></div> </a> </div>
+
+       
+       <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1300">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/MTV_HD_Plus.png"">
+        <div class="livebbtv-name">MTV HD Plus</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1304">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/MTV_Beats_HD.png"">
+        <div class="livebbtv-name">MTV Beats HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1318">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Sonic_Nickelodeon.png"">
+        <div class="livebbtv-name">Sonic Nickelodeon</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1305">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Nick_Junior.png"">
+        <div class="livebbtv-name">Nick Junior</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1307">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Nick_HD_Plus.png"">
+        <div class="livebbtv-name">Nick HD Plus</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1301">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_HD.png"">
+        <div class="livebbtv-name">Colors HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1314">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_Bangla_HD.png"">
+        <div class="livebbtv-name">Colors Bangla HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1302">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_Tamil_HD.png"">
+        <div class="livebbtv-name">Colors Tamil HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1312">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_Gujarati.png"">
+        <div class="livebbtv-name">Colors Gujarati</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1308">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_Kannada_HD.png"">
+        <div class="livebbtv-name">Colors Kannada HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1306">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_Oriya.png"">
+        <div class="livebbtv-name">Colors Oriya</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1310">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_Marathi_HD.png"">
+        <div class="livebbtv-name">Colors Marathi HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1298">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Rishtey.png"">
+        <div class="livebbtv-name">Colors Rishtey</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1309">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Rishtey_Cineplex.png"">
+        <div class="livebbtv-name">Rishtey Cineplex</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1311">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_Super.png"">
+        <div class="livebbtv-name">Colors Super</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://livesportsclub.tech/vootlive/play.php?id=1303">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://jiotv.catchup.cdn.jio.com/dare_images/images/Comedy_Central_HD.png"">
+        <div class="livebbtv-name">Comedy Central HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?zee_tv_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/sX7nFNJ3/Zee-TV-HD.png"">
+        <div class="livebbtv-name">Zee TV HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?zee_cinema_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/yYThpGZm/Zee-Cinema-HD.png"">
+        <div class="livebbtv-name">Zee Cinema HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?and_tv_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/kMKvKGMh/tvHD.png"">
+        <div class="livebbtv-name">And TV HD (& TV HD)</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?and_picture_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/1tLMPNmD/pictures-HD.png"">
+        <div class="livebbtv-name">And Pictures HD (& Pictures HD)</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_entertainmnt_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/52NBhmBZ/SONY-SET-HD.png"">
+        <div class="livebbtv-name">Sony TV HD (SET HD)</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?zee_cafe_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://zeelwebsite.s3.amazonaws.com/zeetele/wp-content/uploads/2017/10/Zee-Cafe-HD.png"">
+        <div class="livebbtv-name">Zee Cafe HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?set_max_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/h4LVhYMk/SONY-MAX-HD.png"">
+        <div class="livebbtv-name">Sony MAX HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_pix_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/yYt2fkC4/SONY-PIX-HD.png"">
+        <div class="livebbtv-name">Sony PIX HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_sab_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/dVCpgwJ7/SONY-SAB-HD.png"">
+        <div class="livebbtv-name">Sony SAB HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_bbc_earth_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/vmdkskm0/SONY-BBC-EARTH.png"">
+        <div class="livebbtv-name">Sony BBC Earth HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?tlc_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/GpJNhK8d/TLC-HD.png"">
+        <div class="livebbtv-name">TLC HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?ngc_sd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/fTtr0DtH/National-Geographic.png"">
+        <div class="livebbtv-name">National Geographic (Nat Geo)</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?ngc_wild">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/RVkb7ywv/Nat-Geo-Wild.png"">
+        <div class="livebbtv-name">National Geographic Wild (Nat Geo Wild)</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?discovery_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/PfLg1m0z/Discovery-HD.png"">
+        <div class="livebbtv-name">Discovery HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?animal_planet_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/cJH90WSM/Animal-Planet-HD.png"">
+        <div class="livebbtv-name">Animal Planet HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?mtv_beats_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/43S8304C/MTV-Beats-HD.png"">
+        <div class="livebbtv-name">MTV Beats HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?colors">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/k4RTRyD2/Colors.png"">
+        <div class="livebbtv-name">Colors</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?vh1_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/NFhp6rrp/VH1.png"">
+        <div class="livebbtv-name">VH1 HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?zing_sd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/gjv4NkVd/Zing.png"">
+        <div class="livebbtv-name">Zing</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_yay">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/Wbv5tgV4/SONY-YAY.png"">
+        <div class="livebbtv-name">Sony Yay</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_max_2">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/vZ8XtycF/SONY-MAX-2.png"">
+        <div class="livebbtv-name">Sony Max 2</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?mtv">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/0NbfhCYV/MTV.png"">
+        <div class="livebbtv-name">MTV</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_wah">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/g0QDp64m/SONY-WAH.png"">
+        <div class="livebbtv-name">Sony WAH</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_ten1_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/nVKQnw1C/SONY-SPORTS-TEN-1-HD.png"">
+        <div class="livebbtv-name">Sony Sports Ten 1 HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_ten2_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/6qQwJ30V/SONY-SPORTS-TEN-2-HD.png"">
+        <div class="livebbtv-name">Sony Sports Ten 2 HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_ten3_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/5tqMXvKq/SONY-SPORTS-TEN-3-HD.png"">
+        <div class="livebbtv-name">Sony Sports Ten 3 HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_six_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/MGK8jHCC/SONY-SPORTS-TEN-5-HD.png"">
+        <div class="livebbtv-name">Sony Sports Ten 5 HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?euro_sports_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/q7WGz8Gb/Eurosport-HD.png"">
+        <div class="livebbtv-name">Euro Sports HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?fox_life">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://images.toffeelive.com/images/program/18833/logo/1280x720/landscape_original_poster_566215001674705603.png"">
+        <div class="livebbtv-name">Fox Life</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_aath">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/Y9gT92QF/SONY-AATH.png"">
+        <div class="livebbtv-name">Sony Aath</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_pal">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/L6mG9p5q/SONY-PAL.png"">
+        <div class="livebbtv-name">Sony Pal</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?colors_b">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/5NPKfQDG/Colors-Bangla.png"">
+        <div class="livebbtv-name">Colors Bangla</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?colors_rishtey">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/cLpmJRhD/Colors-Rishtey.png"">
+        <div class="livebbtv-name">Colors Rishtey</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?zee_bangla">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/Fsf3Jf7w/Zee-Bangla.png"">
+        <div class="livebbtv-name">Zee Bangla</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?colors_infinity_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/QNzWsX0m/Colors-Infinity-HD.png"">
+        <div class="livebbtv-name">Colors Infinity HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?comedy_central_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/3xFX3syw/Comedy-Central-HD.png"">
+        <div class="livebbtv-name">Comedy Central HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?zee_anmol">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/jStf3M8Y/Zee-Anmol.png"">
+        <div class="livebbtv-name">Zee Anmol</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?discovery_kids">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/ZKFBNrJ7/Discovery-Kids.png"">
+        <div class="livebbtv-name">Discovery Kids</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?zee_bangla_cinema">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/Zq1K2RTv/Zee-Anmol-Cinema-jpg.png"">
+        <div class="livebbtv-name">Zee Bangla Cinema</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?zee_bolly">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/cLvvbPQj/Zee-Bollywood.png"">
+        <div class="livebbtv-name">Zee Bollywood</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?zee_action">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/50SyzJVH/Zee-Action.png"">
+        <div class="livebbtv-name">Zee Action</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?colors_bangla_cinema">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/DwG2shQ2/Colors-Bangla-Cinema.png"">
+        <div class="livebbtv-name">Colors Bangla Cinema</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sony_max">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/15nPhSjp/SONY-MAX.png"">
+        <div class="livebbtv-name">Sony MAX</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?sonic">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/xd9WCVtp/Sonic-Nickelodeon.png"">
+        <div class="livebbtv-name">Sonic</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?nick_junior">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/Hn5gM456/Nick-Jr.png"">
+        <div class="livebbtv-name">Nick Junior</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?nick">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/05mRcnMf/Nick.png"">
+        <div class="livebbtv-name">Nick</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?b4u_movies">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://images.toffeelive.com/images/program/366/logo/1280x720/landscape_original_poster_193680001663003894.png"">
+        <div class="livebbtv-name">B4U Movies Asia Pacific</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?b4umusic">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://images.toffeelive.com/images/program/367/logo/1280x720/landscape_original_poster_596295001664253129.png"">
+        <div class="livebbtv-name">B4U Music</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?zoom_tv">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://images.toffeelive.com/images/program/7838/logo/1280x720/landscape_original_poster_497264001639401080.png"">
+        <div class="livebbtv-name">Zoom</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?lotus_macau">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://images.toffeelive.com/images/program/389/logo/1280x720/landscape_original_poster_064937001673185059.png"">
+        <div class="livebbtv-name">Lotus Macau</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?discovery_india_id_hd">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/g227FHJ1/Investigation-Discovery.png"">
+        <div class="livebbtv-name">Investigation Discovery HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?rtv_b">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://images.toffeelive.com/images/program/338/logo/1280x720/landscape_original_poster_015936001645179589.png"">
+        <div class="livebbtv-name">RTV Bangladesh</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?btv_sangshodh">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://images.toffeelive.com/images/program/64/logo/168x94/mobile_thumb_519363001485334791.png"">
+        <div class="livebbtv-name">Sangsad TV</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?boishakhi">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/BbWVDWJK/BOISHAKHI-HD-normal.jpg"">
+        <div class="livebbtv-name">Boishakhi TV</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?atn_bangla">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://images.toffeelive.com/images/program/38/logo/1280x720/landscape_original_poster_168529001656610260.png"">
+        <div class="livebbtv-name">ATN Bangla</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?discovery_turbo">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/Mp1nwVFb/Discovery-Turbo.png"">
+        <div class="livebbtv-name">Discovery Turbo</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?history_tv">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/JzdHPMvS/History-18-HD.png"">
+        <div class="livebbtv-name">History TV 18</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?discovery_science">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/RhfW0t0B/Discovery-Science.png"">
+        <div class="livebbtv-name">Discovery Science</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href=" https://www.madplay.tk/toffelive/play.php?nhk_world">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://i.postimg.cc/1zxYnhM1/landscape-original-poster-314935001563629478.png"">
+        <div class="livebbtv-name">NHK World</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/discovery.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://ap2-prod-images.disco-api.com/2020/12/17/328f4c6f-e0be-4c88-a39f-e19facc0bc0b.png"">
+        <div class="livebbtv-name">Discovery Channel</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/animalplanet.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://ap2-prod-images.disco-api.com/2020/12/17/6bfada34-767b-4654-a6a2-526173c6da8c.png"">
+        <div class="livebbtv-name">Animal Planet</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/dscience.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://ap2-prod-images.disco-api.com/2020/12/16/0ab4383a-aa67-4166-aeb6-fcc1c6e02e66.png"">
+        <div class="livebbtv-name">Discovery Science</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/tlc.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://ap2-prod-images.disco-api.com/2020/12/16/644fb820-4583-4141-b251-bb2a70f2ca80.png"">
+        <div class="livebbtv-name">TLC</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/dturbo.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://ap2-prod-images.disco-api.com/2020/12/16/8104e113-f6d2-46b2-85e2-c2c497eb8307.png"">
+        <div class="livebbtv-name">Discovery Turbo</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/dinvest.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://upload.wikimedia.org/wikipedia/commons/4/41/InvestigationDiscovery.png"">
+        <div class="livebbtv-name">Investigation Discovery</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/eurosports.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://ap2-prod-images.disco-api.com/2020/12/17/d187c23d-46da-4a59-8929-7534b7a01c0c.png"">
+        <div class="livebbtv-name">Eurosport</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/dmax.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://ap2-prod-images.disco-api.com/2020/12/16/a297d103-9ac7-4a10-8359-1e65abb625cc.png"">
+        <div class="livebbtv-name">DMAX</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/trvl.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://ap2-prod-images.disco-api.com/2020/12/05/967c038f-8703-4f64-9446-5a9032c86c87.png"">
+        <div class="livebbtv-name">TRVL Channel</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/hgtv.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://ap2-prod-images.disco-api.com/2020/12/17/df769200-cd93-420a-834a-f0426323787e.png"">
+        <div class="livebbtv-name">HGTV</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/foodn.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://ap2-prod-images.disco-api.com/2020/12/16/512a525a-6841-4a53-bd25-22f5f055dd1a.png"">
+        <div class="livebbtv-name">Food Network</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/player/play.php?https://madplay.live/discovery/dkids.m3u8">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/2016_Discovery_Kids_logo.svg/1200px-2016_Discovery_Kids_logo.svg.png"">
+        <div class="livebbtv-name">Discovery Kids</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?1918">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Jio_Cricket_English.png"">
+        <div class="livebbtv-name">Jio Cricket English HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?144">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_HD.png"">
+        <div class="livebbtv-name">Colors HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?291">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_HD.png"">
+        <div class="livebbtv-name">SET HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?167">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_TV_HD.png"">
+        <div class="livebbtv-name">Zee TV HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?476">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Max_HD.png"">
+        <div class="livebbtv-name">Sony Max HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?165">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Cinema_HD.png"">
+        <div class="livebbtv-name">Zee Cinema HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?155">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Six_HD.png"">
+        <div class="livebbtv-name">Sony Ten 5 HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?383">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Times_NOW.png"">
+        <div class="livebbtv-name">Times NOW</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?1906">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Times_Now_Navbharat.png"">
+        <div class="livebbtv-name">Times Now Navbharat</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?162">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Ten_HD.png"">
+        <div class="livebbtv-name">Sony Ten 1 HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?173">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Aaj_Tak.png"">
+        <div class="livebbtv-name">Aaj Tak</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?1155">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/BBC_Marathi.png"">
+        <div class="livebbtv-name">BBC Marathi</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?177">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/ABP_News_India.png"">
+        <div class="livebbtv-name">ABP News India</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?891">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Ten2_HD.png"">
+        <div class="livebbtv-name">Sony Ten 2 HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?492">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/CNN_NEWS_18.png"">
+        <div class="livebbtv-name">CNN NEWS 18</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?1145">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/MTV_HD_Plus.png"">
+        <div class="livebbtv-name">MTV HD Plus</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?753">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/MTV_Beats_HD.png"">
+        <div class="livebbtv-name">MTV Beats HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?858">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Republic_TV.png"">
+        <div class="livebbtv-name">Republic TV</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?584">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Mastiii.png"">
+        <div class="livebbtv-name">Mastiii</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?612">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/ABP_Majha.png"">
+        <div class="livebbtv-name">ABP Majha</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?545">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Nick_Hindi.png"">
+        <div class="livebbtv-name">Nick Hindi</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?619">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Karnataka.png"">
+        <div class="livebbtv-name">TV9 Karnataka</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?559">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Pogo_Hindi.png"">
+        <div class="livebbtv-name">Pogo Hindi</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?636">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Polimer_News.png"">
+        <div class="livebbtv-name">Polimer News</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?618">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/TV9_Telugu_News.png"">
+        <div class="livebbtv-name">TV9 Telugu News</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?816">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Cartoon_Network_Hindi.png"">
+        <div class="livebbtv-name">Cartoon Network Hindi</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?463">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Discovery_HD_World.png"">
+        <div class="livebbtv-name">Discovery HD World</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?672">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/ABP_Ananda.png"">
+        <div class="livebbtv-name">ABP Ananda</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?821">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_BBC_Earth_HD.png"">
+        <div class="livebbtv-name">Sony BBC Earth HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?146">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/History_HD.png"">
+        <div class="livebbtv-name">History TV18 HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?479">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/TLC_HD_World.png"">
+        <div class="livebbtv-name">TLC HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?561">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Food_Food.png"">
+        <div class="livebbtv-name">Food Food</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?560">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_Good_Times.png"">
+        <div class="livebbtv-name">GOOD TiMES</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?657">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Business.png"">
+        <div class="livebbtv-name">Zee Business</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?143">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/CNBC_Tv18_Prime_HD.png"">
+        <div class="livebbtv-name">CNBC Tv18 Prime HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?259">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/NDTV_Profit.png"">
+        <div class="livebbtv-name">NDTV Profit</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?190">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/CNBC_Awaaz.png"">
+        <div class="livebbtv-name">CNBC Awaaz</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?175">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Aastha.png"">
+        <div class="livebbtv-name">Aastha</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?594">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Aastha_Bhajan.png"">
+        <div class="livebbtv-name">Aastha Bhajan</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?288">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Sanskar.png"">
+        <div class="livebbtv-name">Sanskar</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?1433">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/India_Science.png"">
+        <div class="livebbtv-name">India Science</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?980">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Swayam_Prabha_01.png"">
+        <div class="livebbtv-name">Swayam Prabha 01</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?981">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Swayam_Prabha_02.png"">
+        <div class="livebbtv-name">Swayam Prabha 02</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?982">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Swayam_Prabha_03.png"">
+        <div class="livebbtv-name">Swayam Prabha 03</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?154">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_SAB.png"">
+        <div class="livebbtv-name">Sony SAB</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?472">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/And_TV_HD.png"">
+        <div class="livebbtv-name">And TV HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?279">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Rishtey.png"">
+        <div class="livebbtv-name">Rishtey</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?473">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Anmol.png"">
+        <div class="livebbtv-name">Zee Anmol</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?474">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_Pal.png"">
+        <div class="livebbtv-name">Sony Pal</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?471">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Sony_SAB_HD.png"">
+        <div class="livebbtv-name">Sony SAB HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?445">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Marathi.png"">
+        <div class="livebbtv-name">Zee Marathi</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?755">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_Marathi_HD.png"">
+        <div class="livebbtv-name">Colors Marathi HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?757">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Colors_Kannada_HD.png"">
+        <div class="livebbtv-name">Colors Kannada HD</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?689">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Zee_Kannada.png"">
+        <div class="livebbtv-name">Zee Kannada</div>
+        </div></a></div>
+        <div class="livebbtv-item">
+        <a href="https://madplay.live/jio/play.php?1157">
+        <div class="livebbtv-thumb" style=" bottom: 0px; ">
+        <img class="w321" src="http://jiotv.catchup.cdn.jio.com/dare_images/images/Comedy_Central_HD.png"">
+        <div class="livebbtv-name">Comedy Central HD</div>
+        </div></a></div>
+           
+           
+           
+           
+           
+           
+           
+           </div>
+           </div>
+           
+             <br>
+              
+                <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+           
+               <script>
+                 
+           $(document).ready(function(){
+             $("#look_tv_here").on("keyup", function() {
+               var value = $(this).val().toLowerCase();
+               $(".livebbtv-item").filter(function() {
+                 $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+               });
+             });
+           });
+           
+           
+           
+           
+           
+                   $(document).ready(function(){
+                       $(".bx").click(function(){
+                          $("#drop").slideToggle("fast"); 
+                       });
+                   });
+           
+               </script>
+               <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+           
+             <script src="./script.js"></script>
+           
+           
+           </div>
+       
+           
+           
+        </div>
+      </div>
+
+        
+ 
+ <div class="main" id="ch_list">
+ <div> 
+ 
+ </div>
+ </div>
+
+  <br>
+        <footer>
+        <p>Copyright © 2023    All Rights Reserved.</p>
+    </footer>
+    
+           <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+
+    <script>
+    	
+$(document).ready(function(){
+  $("#look_tv_here").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $(".livebbtv-item").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+
+
+
+
+
+        $(document).ready(function(){
+            $(".bx").click(function(){
+               $("#drop").slideToggle("fast"); 
+            });
+        });
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https: // unpkg .com / ionicons @ 5.5.2 / dist / ionicons / ionicons.js"></script>
+  <script>
+	
+(() => {
+	let TypingSpeed = 50;
+	let NxtMsgDelay = 1000;
+	let CharacterPos = 0;
+	let MsgBuffer = "";
+	let MsgIndex = 0;
+	let delay;
+	let id = document.getElementById("typing-text");
+	let messages =
+[
+	"Welcome To My Website!",
+	"Watch Live Channels",
+	"Thank's for visiting Varun-iptv website"
+]
+
+	// https://www.html-code-generator.com/html/typewriter-text-scroller
+	const StartTyping = () => {
+		if (CharacterPos != messages[MsgIndex].length) {
+			MsgBuffer += messages[MsgIndex].charAt(CharacterPos);
+			id.value = MsgBuffer+(CharacterPos != messages[MsgIndex].length-1 ? "_":"");
+			delay = TypingSpeed;
+			id.scrollTop = id.scrollHeight; 
+		} else {
+			delay = NxtMsgDelay;
+			MsgBuffer   = "";
+			CharacterPos = -1;
+			if (MsgIndex!= messages.length-1){
+				MsgIndex++;
+			}else {
+				MsgIndex = 0;
+			}
+		}
+		CharacterPos++;
+		setTimeout(StartTyping, delay);
+	}
+	StartTyping();
+})();
+
+</script>
+  <script src="./script.js"></script>
+<script> 
+  $(document).ready(function() {
+      var ddlFilterTableRow = $('select.ddlFilterTableRow'),
+        headerCount = $('#headerCount');
+      headerCount.html('select a filter or use search');
+      ddlFilterTableRow.on('change', function() {
+        ddlFilterTableRow.attr('disabled', 'disabled');
+        var records = $('#livebbtvTable').find('.livebbtv-item');
+        records.hide();
+        var critriaAttributes = [];
+        ddlFilterTableRow.each(function() {
+          var $this = $(this),
+            $selectedLength = $this.find(':selected').length,
+            $critriaAttribute = '';
+          if ($selectedLength > 0 && $this.val() != '0') {
+            if ($selectedLength == 1) {
+              $critriaAttribute += '[data-' + $this.data('attribute') + '*="' + $this.val() + '"]';
+            } else {
+              var $startDataAttribute = '[data-' + $this.data('attribute') + '*="',
+                $endDataAttribute = '"]',
+                $selectedValues = $this.val().toString();
+
+              $critriaAttribute += $startDataAttribute + $selectedValues.replaceAll(',', ($endDataAttribute + ',' + $startDataAttribute)) + $endDataAttribute;
+            }
+            critriaAttributes.push($critriaAttribute);
+          }
+        });
+        var $showRecords = records;
+        if (critriaAttributes.length > 0) {
+          $.each(critriaAttributes, function(i, filterValue) {
+            $showRecords = $showRecords.filter(filterValue);
+          });
+        }
+        $showRecords.show();
+        headerCount.html($showRecords.length + ' channels filtered');
+        ddlFilterTableRow.removeAttr('disabled');
+        $(".filterinput").val('');
+      });
+      $(".filterinput").keyup(function() {
+        var filter = $(this).val(),
+          count = 0;
+        $('select.ddlFilterTableRow').prop('selectedIndex',0);
+        $(".livebbtv-item").each(function() {
+          if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+            $(this).fadeOut();
+          } else {
+            $(this).show();
+            count++;
+          }
+        });
+      });
+    });
+    
+    </script>
+<script> 
+	
+    const up = document.querySelector('.up')
+
+window.addEventListener('scroll', () => {
+  if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+    up.style.display = "block"
+  } else {
+    up.style.display = "none"
+  }
+  })
+  
+  up.addEventListener('click', () => {
+  document.body.scrollTop = 0
+  document.documentElement.scrollTop = 0
+})
+
+window.addEventListener('scroll', () => {
+  if (document.body.scrollTop > 1200 || document.documentElement.scrollTop > 1200) {
+    htmlbar.classList.add('activehtml')
+    cssbar.classList.add('activecss')
+    jsbar.classList.add('activejs')
+  }
+})
+</script>
+
+
+</body></html>
